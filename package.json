@@ -1,0 +1,50 @@
+{
+  "name": "l8r",
+  "version": "1.0.0",
+  "description": "queue multiple functions and run later",
+  "author": "Buster Collings <busterc@gmail.com> (https://about.me/buster)",
+  "license": "ISC",
+  "repository": "busterc/l8r",
+  "scripts": {
+    "lint": "eslint --ignore-pattern /dist/ .",
+    "build": "npm install && mkdir -p ./dist && rm -rf ./dist/* && browserify index.js -s L8r -o ./dist/l8r.js && uglifyjs ./dist/l8r.js -c -m -o ./dist/l8r.min.js --source-map ./dist/l8r.min.map --source-map-url l8r.min.map",
+    "test": "npm install && npm run lint && tap test.js --coverage-report=text",
+    "test-browser": "npm run build && open test.html"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "eslint": "^3.16.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3",
+    "tap": "^10.2.1",
+    "uglify-js": "^2.8.7"
+  },
+  "keywords": [
+    "later",
+    "l8r",
+    "run",
+    "eventual",
+    "eventually",
+    "cache",
+    "queue",
+    "functions",
+    "socket.io",
+    "socketio",
+    "socket.io-client",
+    "listener",
+    "listeners",
+    "bind",
+    "handler",
+    "handlers",
+    "ware",
+    "all",
+    "call",
+    "apply"
+  ]
+}

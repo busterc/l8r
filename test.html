@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test l8r</title>
+  <script src="./dist/l8r.min.js"></script>
+</head>
+
+<body>
+  <h1>l8r</h1>
+  <div id="results"></div>
+
+  <script>
+    var results = (document.getElementById('results'));
+    try {
+      var l8r = new L8r();
+      var output = [];
+      var passed = true;
+
+      l8r.add(function (a) {
+        output.push(a);
+      }).add(function (a) {
+        setTimeout(function () {
+          output.push(a * 2);
+        }, 100);
+      }).add(function (a) {
+        output.push(a * 3);
+      }).add(function () {
+        setTimeout(function () {
+          if (output[0] !== 3) {
+            results.innerHTML += 'failed: [0]<br />';
+            passed = false;
+          }
+          if (output[1] !== 9) {
+            results.innerHTML += 'failed: [1]<br />';
+            passed = false;
+          }
+          if (output[2] !== 6) {
+            results.innerHTML += 'failed: [2]<br />';
+            passed = false;
+          }
+          if (passed) {
+            results.innerHTML = 'ALL TESTS PASSED';
+          }
+        }, 200);
+      });
+
+      l8r.run(3);
+    } catch (error) {
+      results.innerHTML = 'FAILED: ' + error;
+    }
+  </script>
+</body>
+
+</html>
