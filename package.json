@@ -17,13 +17,13 @@
     "dist"
   ],
   "devDependencies": {
-    "browserify": "^14.1.0",
-    "eslint": "^3.16.1",
-    "eslint-config-xo-space": "^0.15.0",
-    "socket.io": "^1.7.3",
-    "socket.io-client": "^1.7.3",
-    "tap": "^10.2.1",
-    "uglify-js": "^2.8.7"
+    "browserify": "^16.2.2",
+    "eslint": "^5.4.0",
+    "eslint-config-xo-space": "^0.20.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "tap": "^12.0.1",
+    "uglify-js": "^3.4.8"
   },
   "keywords": [
     "later",
