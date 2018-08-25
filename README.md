@@ -1,4 +1,7 @@
 # l8r [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/l8r.svg)](https://greenkeeper.io/)
+
 > queue multiple functions and run later
 
 __*Niceties*__
